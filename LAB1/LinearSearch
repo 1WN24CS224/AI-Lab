@@ -1,0 +1,10 @@
+arr=[54,12,23,45,1]
+key=int(input("enter"))
+found=False
+for i in range(len(arr)):
+    if arr[i]==key:
+        print("Key found at index",i)
+        found=True
+        break
+if found==False:
+    print("Key not found")

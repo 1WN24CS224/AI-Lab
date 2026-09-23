@@ -1,0 +1,28 @@
+def VacuumCleanerAgent(room, StatusA, StatusB):
+    if room == 'A':
+        if StatusA == 'Dirty':
+            print("Action: Suck")
+            StatusA = 'Clean'
+        elif StatusA == 'Clean':
+            print("Action: Move to B")
+            room = 'B'
+    elif room == 'B':
+        if StatusB == 'Dirty':
+            print("Action: Suck")
+            StatusB = 'Clean'
+        elif StatusB == 'Clean':
+            print("Action: Move to A")
+            room = 'A'
+    return room, StatusA, StatusB
+room = 'A'
+StatusA = 'Dirty'
+StatusB = 'Dirty'
+print("Initial State:", room, StatusA, StatusB)
+while StatusA == 'Dirty' or StatusB == 'Dirty':
+    room, StatusA, StatusB = VacuumCleanerAgent(room, StatusA, StatusB)
+    print('State: ',room,StatusA,StatusB)
+print("Reached Goal State:", room, StatusA, StatusB)                                                                                                                                                                                           
+
+
+     
+    
